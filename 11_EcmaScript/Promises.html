@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises in js</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <a href="../data.json">Data</a>
+    <script>
+        const Pro =()=> new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                let sucess = true;
+                if(sucess){
+                resolve("Promises Solve SuccessFull");
+
+            }
+            else{
+                reject("Promises Failed");
+            }
+            },2000)
+            
+        })
+        // Promises Using  then and catch()
+
+        // Pro.then(data=>{
+        //     console.log(data);
+        // })
+        // .catch(error=>{
+        //     console.log(error);
+        // })
+
+        // Promise Using Async and Await
+        
+
+
+        // Api fetch Handle Using Promise
+
+        async function data(){
+            try{
+                // Fetch Api
+                let text = await fetch('../data.json');
+                console.log(text);
+                // Convert Json Format To Readable 
+                let result = await text.json();
+                console.log(result.cases);
+                // console.log(result);
+                document.getElementById("demo").innerHTML = result.cases
+                console.log(result.cases.length);
+                // for (let i = 0; i < result.cases.length; i++) {
+                //     document.getElementById("demo").innerHTML = result.cases[i]
+                //     // console.log( result.cases_time_series[i]);
+                // }
+            }
+            catch(error){
+                console.log(error);
+            }
+        }
+        // // Call The Function
+        data();
+
+         
+    </script>
+</body>
+</html>

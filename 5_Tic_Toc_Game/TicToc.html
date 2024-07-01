@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Toc Game Crete Using (Html,Css,Javascript)
+    </title>
+    <style>
+        body{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .main{
+            
+            text-align: center;
+        }
+        .conatainer{
+            width: 30vw;
+            height: 30vh;
+            background-color: rgb(14, 47, 215);
+            border-radius: 20px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .conatainer input{
+            height: 30.5%;
+            width: 30.9%;
+            background-color: rgb(14, 47, 215);
+            outline: none;
+            border-radius: 10px;
+            cursor: pointer;
+            color: white;
+            box-shadow: 0px 0px 2px 1px rgb(61, 116, 209);
+        }
+        button{
+            padding: 10px 30px;
+            background-color: transparent;
+            border: 2px solid blue;
+            font-size: 1.2rem;
+            font-family:cursive;
+            border-radius: 50px;
+            /* border: none; */
+            border-radius: 20px;
+            text-align: center;
+            margin: 10px auto;
+        }
+       .border-rad1{
+            border-radius: 10px 0px 0px 0px;
+        }
+        .border-rad2{
+            border-radius: 0px 10px 0px 0px;
+        }
+        .border-rad3{
+            border-radius: 0px 0px 0px 10px;
+        }
+        .border-rad4{
+            border-radius: 0px 0px 10px 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+    <div class="conatainer">
+        <input type="text" id="1" class="border-rad1" onclick="Mygame(this.id)" value="">
+        <input type="text" id="2" onclick="Mygame(this.id)" value="">
+        <input type="text" id="3" class="border-rad2" onclick="Mygame(this.id)" value="">
+        <input type="text" id="4" onclick="Mygame(this.id)" value="">
+        <input type="text" id="5" onclick="Mygame(this.id)" value="">
+        <input type="text" id="6" onclick="Mygame(this.id)" value="">
+        <input type="text" id="7" class="border-rad3" onclick="Mygame(this.id)" value="">
+        <input type="text" id="8" onclick="Mygame(this.id)" value="">
+        <input type="text" id="9" class="border-rad4" onclick="Mygame(this.id)" value="">
+    </div>
+    <button onclick="location.reload()">Reset</button>
+    <p id="message"></p>
+</div>
+</body>
+<script>
+    let cnt= 0;
+    let i=1;
+    // var winner 
+
+    function Mygame(val){
+        if(document.getElementById("message").innerHTML == ""){
+            if(i==1){
+                document.getElementById(val).value ="X";
+                document.getElementById(val).disabled = true;
+                i=0;
+            }
+            else{
+                document.getElementById(val).value = "O";
+                document.getElementById(val).disabled =true;
+                i=1;
+            }
+            cnt++;
+            // console.log(cnt);
+            Result(val);
+            
+        }
+    }
+    function Result(val){
+        console.log(val)
+        var b1,b2,b3,b4,b5,b6,b7,b8,b9;
+        b1 =document.getElementById("1").value;
+        b2 =document.getElementById("2").value;
+        b3 =document.getElementById("3").value;
+        b4 =document.getElementById("4").value;
+        b5 =document.getElementById("5").value;
+        b6 =document.getElementById("6").value;
+        b7 =document.getElementById("7").value;
+        b8 =document.getElementById("8").value;
+        b9 =document.getElementById("9").value;
+        condition1 = b1 ==='X' && b2 =='X' && b3=='X' ||
+        b4 ==='X' && b5 =='X' && b6=='X' ||
+        b7 ==='X' && b8 =='X' && b9=='X' ||
+        b1 ==='X' && b4 =='X' && b7=='X' ||
+        b2 ==='X' && b5 =='X' && b8=='X' ||
+        b3 ==='X' && b6 =='X' && b9=='X';
+        condition2 = b1 ==='O' && b2 =='O' && b3=='O' ||
+        b4 ==='O' && b5 =='O' && b6=='O' ||
+        b7 ==='O' && b8 =='O' && b9=='O' ||
+        b1 ==='O' && b4 =='O' && b7=='O' ||
+        b2 ==='O' && b5 =='O' && b8=='O' ||
+        b3 ==='O' && b6 =='O' && b9=='O'
+        if(condition1)
+        {
+            document.getElementById("message").innerHTML = "Congratilations🎉 X is Win";
+        }
+        else if(condition2){
+            document.getElementById("message").innerHTML =  "Congratilations🎉 O is Win";
+        }
+        else if (cnt === 9)
+            {
+                document.getElementById("message").innerHTML =  "game is over";
+            }
+       
+
+    }
+</script>
+</html>S

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Time Function</title>
+
+</head>
+<body>
+            <p id="semi"></p>
+            
+ <script>
+        const update_Time =()=>{
+            let D= new Date().toLocaleTimeString();
+            document.getElementById("semi").innerHTML = D;
+        }
+
+       setInterval(()=>{
+            update_Time();
+       },1000)
+
+        // Get Mothod For Date() Function
+        
+        // Show Only date
+        // document.write("<br/>",D.getDate());
+
+        // Show Only index per day in one week(0-6)(Starting With Sunday[0])
+        // document.write("<br/>",D.getDay());
+
+        // Show Only Fullyear like 2023
+        // document.write("<br/>",D.getFullYear());
+
+        // Show only Hours 
+        // document.write("<br/>",D.getHours());
+
+        // Show Only Minutes
+        // document.write("<br/>",D.getMinutes());
+
+        // Show Only Seconds
+        // document.write("<br/>",D.getSeconds());
+
+        // Show Only total Second Like .....1703589365950
+        // document.write("<br/>",D.getTime());
+
+        // Set Method()
+        let NewDate =new Date();
+       
+        // Set Date() To set Date According To our Needs
+        NewDate.setDate(30);
+        // document.write("<br/>",NewDate);
+
+        // SetMonth() To set Month According To NeedS
+        NewDate.setMonth(10);
+        // document.write("<br/>",NewDate)
+
+        NewDate.setHours(3);
+        // document.write("<br/>",NewDate)
+
+        NewDate.setSeconds(12);
+        // document.write("<br/>",NewDate)
+
+        NewDate.setMinutes(33);
+        // document.write("<br/>",NewDate)
+
+        
+    </script>
+</body>
+</html>

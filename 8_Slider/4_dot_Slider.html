@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sliders 2 Using Js</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        img{
+            width: 100%;
+            height: 60vh;
+            object-fit: cover; 
+        }
+        button{
+            padding: 10px 20px;
+            background-color: transparent;
+            border: 2px solid black;
+            color: purple;
+            font-weight: 600;
+            margin-top: 10px;
+            font-family:cursive;
+        }
+        .buttons{
+            text-align: center;
+            display: flex;
+            justify-content: center;
+
+        }
+        .btn{
+            height: 30px;
+            width: 30px;
+            /* border: 2px solid black; */
+            margin: 10px;
+        }
+        .btns1{
+            background: url('https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg');
+            background-position: center;
+            background-size: cover;
+        }
+        .btns2{
+            background: url('https://images.unsplash.com/photo-1500622944204-b135684e99fd?q=80&w=1461&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-position: center;
+            background-size: cover;
+        }
+        .btns3{
+            background: url('https://cdn.pixabay.com/photo/2018/08/14/13/23/ocean-3605547_1280.jpg');
+            background-position: center;
+            background-size: cover;
+        }
+        .btns4{
+            background: url('https://images.unsplash.com/photo-1565115811352-d17794bf8f10?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-position: center;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" alt="" class="boximg">
+        <img src="https://images.unsplash.com/photo-1500622944204-b135684e99fd?q=80&w=1461&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="boximg">
+        <img src="https://cdn.pixabay.com/photo/2018/08/14/13/23/ocean-3605547_1280.jpg" alt="" class="boximg">
+        <img src="https://images.unsplash.com/photo-1565115811352-d17794bf8f10?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="boximg">
+    </div>
+    <div class="buttons">
+       <div class="btns1 btn" id="btn1"></div>
+       <div class="btns2 btn" id="btn2"></div>
+       <div class="btns3 btn" id="btn3"></div>
+       <div class="btns4 btn" id="btn4"></div>
+    </div>
+</body>
+<script>
+    window.onload =function (){
+        Show(); //call the function on page load
+    }
+    var prints = document.getElementsByClassName("boximg");
+    var btn1= document.getElementById("btn1");
+    var btn2 =document.getElementById("btn2");
+    var btn3 =document.getElementById("btn3");
+    var btn4 =document.getElementById("btn4");
+    var cnt=0;
+    function Show(){
+        for (let i = 0; i < prints.length; i++) {
+            prints[i].style.display="none"
+            
+        }
+        prints[cnt].style.display="block"
+    }
+    btn1.addEventListener('click',()=>{
+        cnt=0;
+        Show()
+    })
+    btn2.addEventListener('click',()=>{
+        cnt=1;
+        Show()
+    })
+    btn3.addEventListener('click',()=>{
+        cnt=2;
+        Show()
+    })
+    btn4.addEventListener('click',()=>{
+        cnt=3;
+        Show()
+    })
+    
+</script>
+</html>

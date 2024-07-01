@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Function</title>
+</head>
+<body>
+    
+    
+    <script>
+        // Array  In js
+        
+        let fruit= ['apple','Banana','Chiku'];
+        // document.write("<br/>",fruit)
+        // console.log(fruit);
+        // document.write("<br/>",fruit[0])
+        // console.log(fruit[0]);
+        // document.write("<br/>",fruit[1])
+        // console.log(fruit[1]);
+        // document.write("<br/>",fruit[2])
+        // console.log(fruit[2]);
+        // for (let i = 0; i < fruit.length; i++) {
+        //     document.write("<br/>",fruit[i]);
+        //  }
+        //     for(let i=0;i<fruit.length;i++){
+        //         console.log(fruit[i])
+        //     }
+        // Array Function
+
+        // 1.concat() Method To joint Two or more Array
+
+        let ar1=["Apple","Chiku"];
+        let ar2 =["Baanana","Draagon"];
+        let ar3= ["EFruit","zFruit"];
+        let mixar1= ar1.concat(ar2,ar3);
+        console.log(mixar1)
+        document.write("<br/>",mixar1)
+
+
+        // Join() Method To Join all array to specific sign
+        let ar =[1,2,3,4,54,56,6,67];
+        // console.log(ar.join("**"))
+            // let c=mixar1.join("**");
+        // document.write("<br/>",typeof(c),c);
+
+        // Pop() Method To remove element to end of array
+
+        document.write("<br/>",mixar1.pop());
+        document.write("<br/>",mixar1);
+
+        // // Push() Method to adda one element in the end of the array
+        
+        mixar1.push("Zfruits")
+        document.write("<br/>",mixar1);
+
+        // // Sort() Method To Arrange all element In ascending Order
+
+        mixar1.sort();
+        document.write("<br/>",mixar1)
+
+        // // Reverse() Method to reversee all element into descending order
+
+        mixar1.reverse();
+        document.write("<br/>",mixar1)
+
+        // // Shift() Mehtod To Remove one element into end of array
+
+        mixar1.shift();
+        document.write("<br/>",mixar1)
+
+        // Unshift() Method Used for Add one element into starting of the array
+
+        mixar1.unshift("AppleNew");
+        document.write("<br/>",mixar1)
+        document.write("<br/>", mixar1.length)
+        document.write("<br/>",mixar1[5])
+
+
+
+        // Array Function With Numbers
+        let arr1= [1,2,3,4,12,11,5];
+        let arr2= [6,7,8,9,10];
+        let Mixar = [...arr1,...arr2]
+        document.write(Mixar);
+        
+        // Show Array Data using For...Loop
+        // for (let i  = 0; i < Mixar.length; i++) {
+        //         document.write("<br/>",Mixar[i])
+        // }
+
+        // // 2.Join() Method
+        // document.write("<br/>",Mixar.join("**"));
+
+        // // 3.Push() Method
+        // Mixar.push(99)
+        // document.write("<br/>",Mixar);
+
+        // // 4.Pop() Method
+        // Mixar.pop();
+        // document.write("<br/>",Mixar)
+
+        // // 5.Shift() Method
+        // Mixar.shift();
+        // document.write("<br/>",Mixar);
+
+        // // 6.Unshift() Method
+        // Mixar.unshift(99);
+        // document.write("<br/>",Mixar);
+
+        // // 7.sort() method
+    
+        Mixar.sort((a,b) => a-b);
+        // document.write("<br/> SORT=",Mixar)
+
+        // // 8. Reverse() Method
+        Mixar.reverse();
+        document.write("<br/>",Mixar);
+    </script>
+</body>
+</html>

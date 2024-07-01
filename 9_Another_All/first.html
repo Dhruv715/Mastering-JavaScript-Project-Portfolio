@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.write("HELLO");
+    </script>
+</head>
+
+<body>
+    <h1>WEL COME</h1>
+
+    <script>
+        //1.---> BASIC CONCEPT
+
+
+        // var a = 10, b = 20, sum;
+
+
+        // console.log("type=" + typeof (a));
+
+        // document.write("a=" + a + b);
+        // document.write("<br>HEllO");
+        // document.write("<br>HEllO1 wel come")
+
+        // Task 1: sum of two numbers
+        // var a = 10, b = 20;
+        // sum = a + b;
+        // document.write("sum is", sum);
+
+        // Task 2: Sum of two numbers
+        // document.write(sum)
+
+        // Task 3: sum display using concat operator
+        // document.write("<br/> sum is " + sum)
+
+        // Task 4: Swaping of Two Numbers
+        let e = 10, f = 20, x;
+        
+        // using Third Number
+        // x = e;
+        // e = f;
+        // f = x;
+        // console.log("AFTER VALUE " + e);
+        // console.log("AFTER VALUE " + f);
+
+        // method 2 swaping two numbers
+        // a=a^b;
+        // b=a^b;
+        // a=a^b;
+
+        // mdthod 3 swaping two numbers
+        // a= a+b;
+        // b= a-b;
+        // a= a-b;
+
+        //2.-----> Pattern No.1
+        // for (let i = 1; i <= 5; i++) {
+        //     for (let j = 1; j <= i; j++) {
+        //         document.write(j + " ");
+        //     }
+        //     // console.log("<br/>")
+        //     document.write("<br/>")
+        // }
+
+        // for (let i = 1; i <= 5; i++) {
+        //     for (let j = 1; j <= i; j++) {
+        //         // console.log(i)
+        //         document.write(i + " ")
+        //     }
+        //     // console.log("<br/>")
+        //     document.write("<br/>")
+        // }
+
+        // let counter = 0;
+        // for (let i = 1; i <= 5; i++) {
+        //     for (j = 1; j <= i; j++) {
+        //         counter++;
+        //         // console.log(counter);
+        //         document.write(counter + " ");
+        //     }
+        //     document.write("<br/>")
+        // }
+
+        // 3.------>FIND MAX OF 5 NUMBER USIGN TERNARY OPERATOR
+        let a1 = 10;
+        let a2 = 25;
+        let a3 = 200;
+        let a4 = 20;
+        let a5 = 90;
+
+        // console.log((a1 > a2 && a1 > a3 && a1 > a4 && a1 > a5) ?
+        //     a1 : ((a2 > a3 && a2 > a4 && a2 > a5) ?
+        //         a2 : ((a3 > a4 && a3 > a5) ? a3 : (a4 > a5 ? a4 : a5))))
+        
+        // 4.---------> PRIME NUMBER
+        // let cnt = 0, no = 11, m;
+        // m = no / 2;
+        // for (let i = 2; i <= m; i++) {
+        //     if ( no % i == 0) {
+        //         cnt++;
+        //     }
+        // }
+        // if (cnt >= 1) {
+        //     console.log("not prime number")
+        // }
+        // else {
+        //     console.log("yes this is prime")
+        // }
+
+        // 5.-----> PALINDROM NUMBER
+
+        // let n = 181, rev = 0, s, rem;
+        // s = n;
+        // do {
+        //     rem = n % 10;
+        //     rev = rev * 10 + rem;
+        //     // n = parseInt(n / 10);
+        //     n = parseInt(n/10)
+        //     // console.log(n);
+        // } while (n);
+        // console.log(rev);
+        // if (s == rev) {
+        //     console.log("yess this number is palindrom")
+        // }
+        // else {
+        //     console.log("nooo palindrom number")
+        // }
+
+        // 6.-------> ARMSTRONG NUMBER
+        // let n = 153, rem, s, arm = 0;
+        // s = n;
+        // do {
+        //     rem = n % 10;
+        //     arm = arm + (rem * rem * rem);
+        //     n = parseInt(n/10)
+        // } while (n);
+        // console.log(s);
+        // console.log(arm);
+        // if (s === arm) {
+        //     console.log("yess this number is armstrong")
+        // }
+        // else {
+        //     console.log("not armstrong number")
+        // }
+
+
+        // 7----> 
+        // if a>b so print a only odd numbers and b>a so print even numbers
+
+        // let a = 10, b = 20  ;
+        // if (a > b) {
+        //     for (i = a; i >= b; i--) {
+        //         if (i % 2 === 1) {
+        //             console.log(i);
+        //         }
+        //     }
+        // }
+        // else {
+        //     for (i = b; i >= a; i--) {
+        //         if (i % 2 === 0) {
+        //             console.log(i);
+        //         }
+        //     }
+        // }
+
+        // 8--------> Count Digit
+        //  let n=13256,cnt=0;
+        //  s=n;
+        //  do {
+        //     cnt++;
+        //     n=parseInt(n/10);
+        //  } while (n);   
+        //  console.log(cnt);
+
+        // 9----->Print Table 
+        // for(let i=1;i<=10;i++){
+        //     console.log(3 +" * "+i+" = "+3*i);
+
+        // }
+
+        // DIALOG BOX
+        
+        // 1.ALERT 
+        // var name= "CREATIVE MULTIMEDIA";
+        // alert("WELCOME TO "+name);
+
+        // 2.CONFIRM BOX
+        // let permision= confirm("ARE YOU READY FOR GOA TRIP ?");
+        // console.log(permision);
+        // if(permision){
+        //     console.log("WELCOM GOA............");
+        // }
+        // else{
+        //     console.log("CANCEL TRIPS........")
+        // }
+
+        // 3.PROMPT BOX
+        // let a= prompt("enter a: ");
+        // a=parseInt(a);
+        // let b= prompt("enter b: ");
+        // b=parseInt(b);
+        // console.log(a+b)
+
+    // 10------> Password Authentication System
+    
+    // Method No2
+    // Password Authentication Using Prompt
+    
+    // let pwd,cpwd;
+  
+    // pwd =prompt("Enter Password: ");
+    // pwd =parseInt(pwd);
+
+    // do {
+    //     cpwd =prompt("Enter Confirm Password: ");
+    //     cpwd =parseInt(cpwd);
+
+    // } while (pwd!==cpwd);
+    
+    // alert("Congratulations!!! Password and Confirm Password Both are Match!!");
+
+        // 11------>Fahrenheit to Celsius Converter
+        // let choice = prompt("1.Fahrenheit to Celsius 2.Celsius to Fahrenheit");
+        // choice = parseInt(choice);
+        // let C, F;
+
+              
+        // switch (choice) {
+        //     case 1:
+        //        F=prompt("Enter Fahrenheit Value: ");
+        //         F=parseInt(F);
+        //         C = (F - 32) * 5/9;
+        //         console.log("Celsius "+C)
+        //         break;
+        //     case 2:
+        //          C=prompt("Enter Celsius Value: ");
+        //         C=parseInt(C);
+        //         F=(C * 9/5) + 32.
+        //         console.log("Fahrenheit "+F);
+        //         break;
+
+        //     default:
+        //         console.log("invalid options")
+        //         break;
+        // }
+     
+    </script>
+</body>
+
+</html>

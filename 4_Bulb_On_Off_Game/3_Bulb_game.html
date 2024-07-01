@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bulb Game Part 2</title>
+    <style>
+      .div {
+        height: 200px;
+        width: 200px;
+        background-color: rgb(72, 72, 72);
+        display: flex;
+        flex-direction: column;
+      }
+      .div img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="div">
+      <img src="./offbulb.png" alt="" id="Bulb" onclick="myBulb()" />
+    </div>
+    <script>
+      var Bulb = document.getElementById("Bulb");
+      var IsBuld = false;
+      function myBulb() {
+        IsBuld = !IsBuld;
+        var path = IsBuld ? "./onbulb.png" : "./offbulb.png";
+        Bulb.src = path;
+      }
+    </script>
+  </body>
+</html>

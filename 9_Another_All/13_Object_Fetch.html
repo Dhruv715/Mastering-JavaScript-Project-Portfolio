@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        const  student=[ {name:'mohit', rollno:13,marks:99},
+                        {name:'dhruv',rollno:12,marks:90},
+                        {name:'shail',rollno:11,marks:89},
+                        {name:'sudip',rollno:10,marks:95}
+                        ]
+        var names=[]
+        // Method 1
+        for (let i = 0; i < student.length; i++) {
+            names.push(student[i].name.toUpperCase());
+            
+        }
+
+        // Method 2
+        // names = student.map((stud)=> stud.name.toUpperCase())
+        
+        console.log(names)
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2 Show Todo List Data</title>
+    <style>
+        *{
+            padding: 0; 
+            margin: 0;
+            box-sizing: border-box;
+        }
+        table{
+            width: 30%;
+            background-color: black;
+            margin: 20vh auto;
+            color: white;
+            border-collapse: collapse;
+        }
+        table tr,th,td{
+            color: white;
+            border: 2px solid white;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead> 
+            <tr>
+                <th>Name</th>
+                <th>Date</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody id="semi">
+
+        </tbody>
+    </table>    
+</body>
+<script>
+    
+    var Datas = JSON.parse(localStorage.getItem("Data"));
+    for (let i = 0; i < Datas.length; i++){
+            document.getElementById("semi").innerHTML +=` <tr>
+                <td>${Datas[i].Name}</td>
+                <td>${Datas[i].Date}</td>
+                <td>${Datas[i].Time}</td>
+            </tr>  `
+    }
+    
+</script>
+</html>

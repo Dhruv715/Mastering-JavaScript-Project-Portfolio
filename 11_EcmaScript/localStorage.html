@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List 1 localstorage </title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .box{
+            background-color: black;
+            width: 30vw;
+            height: auto;
+            padding: 10px;
+            margin: 20vh auto;
+            border-radius: 10px;
+           
+        }
+        h1{
+            font-family: cursive;
+            font-size: 2rem;
+            text-align: center;
+            padding: 10px;
+            color: white;
+        }
+        input{
+            width: 80%;
+            padding: 10px;
+            color: black;
+            border: none;
+            outline: none;
+            margin: 10px auto;
+            display: block;
+        }
+        label{
+            text-align: left !important;
+            color: white;
+            /* margin-right: auto; */
+            padding-left: 40px;
+            font-size: 1rem;
+            font-family: cursive;
+            color: lightgrey;
+            
+        }
+        input[type="submit"]{
+            background-color:transparent;
+            color: white;
+            font-family: cursive;
+            padding: 10px 20px;
+            border: 2px solid white;
+            border-radius: 20px;
+            margin: 20px auto;
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>Todo List</h1>
+        <form action="" onsubmit="StartGame(); return false ">
+            <label for="content">Todo Task</label>
+        <input type="text" placeholder="Enter Todo..." id="content">
+        <label for="date">Select Date</label>
+        <input type="date" id="dates">
+        <label for="time">Select Time</label>
+        <input type="time" name="time" id="times" placeholder="enter Time">
+        <input type="submit"  value="Submit">
+        </form>
+    </div>
+    <script>
+        let arr=[];
+        function StartGame(){
+            let Data = document.getElementById("content").value;
+            let Dates = document.getElementById("dates").value;
+            let Times = document.getElementById("times").value;
+             obj ={Name :Data , Date : Dates, Time:Times};
+             arr.push(obj);
+             console.log(arr);
+             localStorage.setItem("Data",JSON.stringify(arr));
+             document.getElementById("content").value="";
+             document.getElementById("dates").value="";
+             document.getElementById("times").value="";
+        }
+    </script>
+</body>
+</html>

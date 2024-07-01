@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Selector</title>
+    <style> 
+    .shape{
+        height: 100px;
+        width: 100px;
+        background-color: black;
+        transition: all ease-in-out .5s;
+    }
+    #shapy{
+        height: 100px;
+        width: 100px;
+        background-color: black;
+    }
+    #rect{
+        height: 100px;
+        width: 100px;
+        background-color: black;
+    }
+    #oval{
+        height: 100px;
+        width: 100px;
+        background-color: black;
+    }
+    .container{
+        display: flex;
+    }
+    .boxy{
+        margin: 2px 10px;
+    }
+    </style>
+</head>
+<body>
+    <div id="uni">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, ea?</div>
+    <div class="box">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis, reiciendis!</div>
+    <div class="box">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis, reiciendis!</div>
+    <div class="box">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis, reiciendis!</div>
+    <div class="box">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis, reiciendis!</div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et iure voluptatum aspernatur nostrum ea delectus soluta dignissimos dolore a quaerat?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et iure voluptatum aspernatur nostrum ea delectus soluta dignissimos dolore a quaerat?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et iure voluptatum aspernatur nostrum ea delectus soluta dignissimos dolore a quaerat?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et iure voluptatum aspernatur nostrum ea delectus soluta dignissimos dolore a quaerat?</p>
+    <div class="sem">semi1</div>
+    <div class="sem">semi2</div>
+    <div class="sem">semi3</div>
+    <div class="sem">semi4</div>
+
+    <input type="text" name="input1" value="">
+    <input type="text" name="input1" value="">
+    <p id="answer">
+
+    </p>
+    <button onclick="myfun()">Click me</button>
+
+    <div class="container">
+        <div class="boxy">
+            <div class="shape" id="shapy">
+
+            </div>
+            <button onclick="round()"> Round</button>
+        </div>
+        <div class="boxy">
+            <div class="shape" id="rect">
+
+            </div>
+            <button onclick="Rectangle()">Rectangle</button>
+        </div>
+        <div class="boxy">
+            <div class="shape" id="oval">
+
+            </div>
+            <button  onclick="oval()">Oval</button>
+        </div>
+        
+    </div>
+    <script>
+
+        // selecor
+        // id selector -->unique
+        // class selector --> multiple
+        // tagname selector -->multiple
+        // name selector -->multiple
+
+        // 1.id selector
+        let ids= document.getElementById("uni");
+        ids.style.color="salmon";
+
+        // 2.class selector
+        let cls1 =document.getElementsByClassName("box")[0].style.color="green";
+        let cls2 =document.getElementsByClassName("box")[1].style.color="teal";
+        let cls3 =document.getElementsByClassName("box")[2].style.color="red";
+        let cls4 =document.getElementsByClassName("box")[3].style.color="aqua";
+        
+        // 3.Tagname Selector
+        document.getElementsByTagName("p")[0].style.backgroundColor="red";
+        document.getElementsByTagName("p")[1].style.backgroundColor="lightgray";
+        document.getElementsByTagName("p")[2].style.backgroundColor="aqua";
+        document.getElementsByTagName("p")[3].style.backgroundColor="green";
+
+        // Access Class into using loop
+         let sem = document.getElementsByClassName("sem");
+        for(let i=0;i<sem.length ;i++){
+            console.log(sem[i]);
+        }
+
+        // Name selector
+        document.getElementsByName("input1")[0].style.backgroundColor="red";
+        
+        
+        function myfun(){
+             var ans1 = document.getElementsByName("input1")[1].value;
+            console.log(ans1)
+            document.getElementById("answer").innerText= ans1
+        }
+
+        function round(){
+                document.getElementById("shapy").style.borderRadius="50%";
+        }
+
+        function Rectangle(){
+            document.getElementById("rect").style.width="200px";
+        }
+
+        function oval(){
+            document.getElementById("oval").style.borderRadius="50% 50%";
+            document.getElementById("oval").style.height="70px"
+
+        }
+    </script>
+</body>
+</html>

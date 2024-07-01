@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oops Concept In Js</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Post</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tbody id="semi">
+          
+        </tbody>
+    </table>
+    <script>
+        // About The object and class in js 
+        // Inheritance Using extends keyword
+        class Parent{
+            constructor(name){
+                this.name  = name
+                console.log(`Constructor 1 Say ${name}`);
+            }
+            Hello(){
+                console.log('Parent name Was' + this.name);
+            }
+        }
+        class Child extends Parent{
+            constructor(name,toy){
+                super(name);
+                this.name = name;
+                this.toy = toy;
+                console.log(`Constructor 2 Say ${name} and Toy Was ${toy}`)
+            }
+            Play(){
+                console.log(`Hello Child ${this.name} My Fav Toy ${this.toy}`);
+            }
+        }
+        const d= new Child('John','Taddy Bear');
+        d.Hello();
+        d.Play();
+
+
+        // Task 1
+        // Take Input From 5 name and post and post according deside the salary
+
+        // class Employee{
+        //         constructor(name,post){
+        //                 this.name = name;
+        //                 this.post =post;
+        //                 this.salary = this.calculateSalary();
+        //         }
+        //         calculateSalary(){
+        //             switch(this.post){
+        //                 case "manager":
+        //                             return 50000;
+                                   
+        //                 case "hr":
+        //                             return 60000;
+                                    
+        //                 case "head": 
+        //                             return 70000;
+                                    
+        //                 case "employee":
+        //                             return 20000;
+                                   
+        //                 case "salesman": 
+        //                             return 20000;
+                                    
+        //                 default : 
+        //                         return 0;
+                               
+        //             }
+        //         }
+
+        // }
+        // function PlayGame(){
+        //     var employees =[];
+        //     for(i=1;i<=5;i++){
+        //         var name= prompt(`Enter Name..  ${i}`);
+        //         var post = prompt(`Enter Post.. ${i}(hr/manager/head/employee/salesman)`);
+
+        //         var employee = new Employee(name,post);
+        //         employees.push(employee);
+        //     }
+        //     return employees;
+        //     // console.log(employees)
+        // }
+        // var cnt=0
+        // function DisplayEmp(employeesArray){
+        //     for( const employee of employeesArray){
+        //         document.getElementById("semi").innerHTML +=` <tr>
+        //         <td>${employee.name} </td>
+        //         <td>${employee.post}</td>
+        //         <td>${employee.salary}</td>
+
+        //     </tr> `
+        //     cnt++;
+        //     // console.log(cnt)
+        //     console.log(`${employee.name} (${employee.post}) : salary ${employee.salary}`)
+        //     }
+        // }
+
+        // // create obj
+
+        // const employeesArray = PlayGame();
+
+        // DisplayEmp(employeesArray)
+    </script>
+</body>
+</html>

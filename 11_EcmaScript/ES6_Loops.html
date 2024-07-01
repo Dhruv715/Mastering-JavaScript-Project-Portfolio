@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr= [1,2,3,4,5,6,7,8,9,10];
+
+        // for Loop
+        // for(let  i=0;i<arr.length;i++){
+        //     console.log(arr[i]);
+        // }
+
+        // While Loop
+        // let i=0;
+        // while(i<arr.length){
+        //     console.log(arr[i]);
+        //     i++;
+        // }
+
+        // Do..while Loop
+        // let i=0;
+        // do{
+        //     console.log(arr[i]);
+        //     i++;
+        // }while(i<arr.length);
+
+        // for...of Loop
+        // for(const key of arr){
+        //     console.log(key)
+        // }
+
+        // for..in Loop
+        // for(const Key in arr){
+        //         console.log(`arr[${Key}] : ${arr[Key]}`)
+        // }
+
+        // forEach Loop
+        // arr.forEach((ele,i)=>{
+        //     console.log(`arr[${i}] : ${ele}`)
+        // })
+
+        // Map Function 
+        // arr.map(ele =>{
+        //     console.log(ele);
+        // })
+
+        // Map On Object 
+        var obj = [{Name:'Mohit', eye:'Blue' ,Height :'175'},
+        {Name:'Riya', eye:'Brown' ,Height :'170'},
+        {Name:'Situ', eye:'Blue' ,Height :'172'},
+        {Name:'Mayur', eye:'Black' ,Height :'173'},
+        {Name:'Yashita', eye:'Blue' ,Height :'174'},
+        {Name:'Gitanshi', eye:'Black' ,Height :'177'},
+        {Name:'Sudip', eye:'Brown' ,Height :'179'}]
+        // Map Function 
+        // obj.map(person => console.log(person.eye));
+
+        // Filter Function
+        let outputBro=  obj.filter(persons => persons.eye=='Brown')
+        for(let i=0;i<outputBro;i++){
+             console.log(outputBro[i].Name)
+        }
+    </script>
+</body>
+</html>

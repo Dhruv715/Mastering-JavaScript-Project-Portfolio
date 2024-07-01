@@ -1,0 +1,126 @@
+* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 30%;
+    background: url('https://png.pngtree.com/background/20210710/original/pngtree-western-restaurant-red-menu-picture-image_1057325.jpg');
+    
+    height: 600px;
+    margin: 30px auto;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.title {
+    color: white;
+    padding: 10px;
+    height: 120px;
+}
+
+.title h1 {
+    font-family: cursive;
+    font-style: italic;
+    font-weight: 300;
+    text-align: right;
+    padding: 5px 10px;
+}
+
+.title p {
+    font-family: poppins;
+    text-align: right;
+    padding: 0px 10px;
+    font-size: .6rem;
+}
+
+.mainbox {
+    height: 480px;
+    padding-top: 40px;
+}
+
+.item {
+    height: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 40px;
+    text-align: left;
+}
+
+.imgbox {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.imgbox img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+}
+
+.content h1 {
+    color: white;
+    font-family: poppins;
+    font-size: .8rem;
+    color: gray;
+}
+
+.content p {
+    color: white;
+    font-family: poppins;
+    font-size: .9rem;
+    color: gray;
+}
+
+button {
+    padding: 5px 10px;
+    border: 2px solid rgb(121, 121, 121);
+    background-color: transparent;
+    border-radius: 20px;
+    color: rgb(121, 121, 121);
+    font-size: .7rem;
+    font-family: poppins;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+.container1{
+    background-color: black;
+    width: 40%;
+    margin: 10px auto;
+    color: white;
+    font-family: poppins;
+    text-align: center;
+}
+.container1 table {
+    border-collapse: collapse;
+    width: 100%;
+    cursor: pointer;
+}
+.container1 table tr th{
+    font-weight: 300;
+    font-size: .8rem;
+    padding: 10px;
+}
+.container1 table tr td{
+    font-weight: 300;
+    padding: 10px;
+    font-size: .8rem;
+}
+.container1 table, tr,th,td{
+        border: 1px solid gray;
+}

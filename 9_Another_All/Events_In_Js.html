@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events in javascript</title>
+</head>
+<!-- <body onload="PageLoad()"> -->
+<body >
+    <!-- 1.onclick -->
+    <div>
+        <h2>1.Onclick Event</h2>
+    <button id="demo" onclick="myFunction()">click me</button>
+    </div>
+    <div>
+        <h2>2.OnDoubleClick Event</h2>
+        <button id="demo1" ondblclick="MyFun()">Click me</button>
+    </div>
+    <div>
+        <h2>3.MouseOver and MouseOut Event</h2>
+        <h1 style="padding: 50px; background-color: lightgray; width: 30%;"  id="Semi" onmouseover="MouseOver()" onmouseout="MouseOut()">3.The MouseOver Event</h1>
+    </div>
+    <div>
+        <h2>4.onkeyUp and onkeyDown Event</h2>
+        <input type="text" id="input1" onkeyup="Keyup()" onfocus="Focus()" onblur="MyBlur()" onkeypress="KeyPress()">
+    </div>
+
+    <div>
+        <h1>5.onchange event</h1>
+        <select  onchange="MyChange()" id="car">
+            <option value="Audi">Audi</option>
+            <option value="Volvo">Volvo</option>
+            <option value="Toyota">Toyota</option>
+            <option value="Maruti">Maruti</option>
+            <option value="BMW">BMW</option>
+        </select>
+        <p class="demo3"></p>
+    </div>
+    <script>
+        function myFunction(){
+            document.getElementById("demo").innerHTML = "Text Changed";
+        }
+        function MyFun(){
+            document.getElementById("demo1").innerHTML ="Text Changed";
+        }
+        function MouseOver(){
+            document.getElementById("Semi").innerHTML ="Mouse Hover"
+        }
+        function MouseOut(){
+            document.getElementById("Semi").innerHTML ="Mouse Out"
+        }
+        function Keyup(){
+            alert("key up into input field");
+            // document.getElementById("input1").value.toUppercase();
+        }
+        function KeyPress(){
+            document.getElementById("input1").value.toUppercase();
+        }
+        function Focus(){
+            document.getElementById("input1").style.backgroundColor ="lightgray"
+        }
+        function MyBlur(){
+            document.getElementById("input1").style.backgroundColor ="pink"
+        }
+        function PageLoad(){
+            alert("Page Loaded Successfully");
+        }
+        function MyChange(){
+            var d = document.getElementById("car").value;
+            document.getElementById("demo3").innerHTML ="You are Selected   "+ d;
+        }
+    </script>
+</body>
+</html>

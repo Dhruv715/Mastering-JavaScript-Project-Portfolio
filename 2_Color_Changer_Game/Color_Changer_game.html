@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baackground changer game</title>
+    <style>
+        #demo{
+            background-color: white;
+          
+        } 
+        button{
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body id="demo">
+    <button id="Startbtn" onclick="StartingBack()">Start</button>    
+    <button id="StopBtn" onclick="StopBack()">Stop</button>    
+    <script>    
+        // var colors =["red","green","yello","teal","lightgray","orange","salmon","gray","black","blue","pink"];
+
+        // console.log(colors.length)
+      let color;
+        function randomcolor()
+        {
+            
+            color='#';
+            let hexa='0123456789ABCDEF'
+            for (let index = 0; index < 6; index++) {
+                
+                color += hexa[Math.floor(Math.random()*16+1)]
+            }
+            return color;
+            // console.log()
+        }
+        function Mycolors(){
+            // let randomnum = '#'+(Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0');;
+            
+            
+            document.getElementById("demo").style.backgroundColor =randomcolor();
+        }
+       
+    let Myinterval;
+    function StartingBack(){
+        // var st=true;
+
+        // if(st){
+            Myinterval = setInterval(Mycolors, 1000);
+            
+    //    }
+    }
+        function StopBack(){
+            let status= confirm("Stop All Color Change!");
+            if(status){
+                clearInterval(Myinterval);
+            }
+            else{
+                StartingBack();
+            }
+            // Myinterval=null;
+        }
+
+
+    </script>   
+</body>
+</html>

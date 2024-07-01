@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>maa Restaurant Menu 4 </title>
+    <link rel="stylesheet" href="./style1.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <style>
+        .sem{
+            border: 2px solid white;
+            border-radius: 0px;
+            color: white;
+        }
+        .btns{
+            display: flex;
+            height: 100%;
+            
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="title">
+            <h1>Maa Restaurant</h1>
+            <p>Lorem ipsum dolor sit dolor sit amet.</p>
+        </div>
+        <div class="mainbox">
+            <div class="item">
+                <div class="imgbox">
+                    <img src="./image/product1.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h1>Veggie Burger King</h1>
+                    <p>Rs.129</p>
+                </div>
+                <input type="checkbox" class="checkedbox" name="Veggie Burger King" onchange="contentChange()"
+                    value="129" id="1">
+            </div>
+            <div class="item">
+                <div class="imgbox">
+                    <img src="./image/product5.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h1>paneer tikka sabji </h1>
+                    <p>Rs.229</p>
+                </div>
+                <input type="checkbox" class="checkedbox" name="paneer tikka sabji" onchange="contentChange()"
+                    value="229" id="2">
+            </div>
+            <div class="item">
+                <div class="imgbox">
+                    <img src="./image/product4.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h1>Cheese Momos</h1>
+                    <p>Rs.150</p>
+                </div>
+                <input type="checkbox" class="checkedbox" name="Cheese Momos" onchange="contentChange()" value="150"
+                    id="3">
+            </div>
+            <div class="item">
+                <div class="imgbox">
+                    <img src="./image/product2.jpeg" alt="">
+                </div>
+                <div class="content">
+                    <h1>Cheese Pizza</h1>
+                    <p>Rs.220</p>
+                </div>
+                <input type="checkbox" name="Cheese Pizza" class="checkedbox" onchange="contentChange()" value="220"
+                    id="4">
+            </div>
+            <div class="item">
+                <div class="imgbox">
+                    <img src="./image/product3.jpeg" alt="">
+                </div>
+                <div class="content">
+                    <h1>Paneer Toofani. </h1>
+                    <p>Rs.320</p>
+                </div>
+                <input type="checkbox" class="checkedbox" name="Paneer Toofani" onchange="contentChange()" value="320"
+                    id="5">
+            </div>
+            <div class="item">
+                <div class="imgbox">
+                    <img src="./image/product6.png" alt="">
+                </div>
+                <div class="content">
+                    <h1>Best panjabi sabji </h1>
+                    <p>Rs.400</p>
+                </div>
+                <input type="checkbox" class="checkedbox" name="best panjabi sabji" onchange="contentChange()"
+                    value="400" id="6">
+            </div>
+        </div>
+    </div>
+    <div id="print">
+
+    </div>
+    <div class="container1">
+        <table>
+            <caption>Order List</caption>
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Product Price</th>
+                    <th>Manage Stock</th>
+                    <th>Total Price</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="semi">
+
+            </tbody>
+            <tfoot id="Totalamout">
+
+            </tfoot>
+        </table>
+        <p id="print"></p>
+    </div>
+</body>
+<script>
+    var sum = 0;
+    var q = 1;
+    var arr = [];
+
+    function contentChange() {
+        arr=[]
+        var data = document.getElementsByClassName("checkedbox");
+        var amout = document.getElementById("Totalamout");
+        document.getElementById("semi").innerHTML = ""
+        sum = 0
+        for (var i = 0; i < data.length; i++) {
+            if (data[i].checked) {
+                // store data into key
+                var name = data[i].name;
+                // store data into price named key
+                var price = data[i].value;
+                // store all Details Into object 
+                var ids =data[i].id;
+                var obj = { Name: name, Price: price, Que: q, subTotal: price * q,Id :ids };
+             
+                arr.push(obj);
+              
+            }
+            print();
+        }
+     
+    }
+    function print() {
+        
+        sum = 0;
+        
+        var data = " "
+        document.getElementById("semi").innerHTML =""
+        for (let i = 0; i < arr.length; i++) {
+            // console.log("q"+arr[i].Que);
+            document.getElementById("semi").innerHTML  += `<tr><td>${arr[i].Name}</td><td>${arr[i].Price}</td>
+                <td class="btns"> <button onclick="mi(${i})" class="sem"> - </button><button class="sem">${arr[i].Que}</button> <button class="sem" onclick="plusfun(${i})"> + </button></td> 
+                <td>${arr[i].subTotal}</td><td><button onclick="Deleterecord(${i})">Delete</button></td></tr>`;
+            sum = sum + arr[i].subTotal;
+        }
+        // = data
+        document.getElementById("Totalamout").innerHTML = ` <tr> <th colspan="5">Total Bill : ${sum}</th></tr>`
+    }
+    function plusfun(i) {
+            arr[i].Que++;
+            arr[i].subTotal = arr[i].Price  * arr[i].Que
+            print();
+        }
+
+        function mi(i){
+            if (arr[i].Que > 1) {
+                 arr[i].Que--;
+                 arr[i].subTotal = arr[i].Price  * arr[i].Que;
+                 print();
+             }
+        }
+        function Deleterecord(i) {
+
+            UncheckBtn(arr[i].Id);
+            arr.splice(i, 1);
+            print();
+        }
+        // Add Master Functionality About if(Press Delete button and uncheck this name checkbox)
+        function UncheckBtn(Ids){
+            document.getElementById(Ids).checked = false;
+        }
+</script>
+
+</html>

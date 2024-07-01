@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .sidebar{
+            background-color: none;
+            width: 100px;
+            height: 100vh;
+            transition: all ease-in-out 1s;
+           position: absolute;
+           top: 0px;
+           /* left: 20px; */
+           overflow: hidden;
+        }
+        /* .sidebar:hover{
+            width: 350px;
+        } */
+        .demo i{
+            color: rgb(7, 7, 7);
+            background-color: lightgray;
+            padding: 10px;
+            border-radius: 50%;
+            
+        }
+       
+        .demo0 {
+            position: absolute;
+            top: 200px;
+            left: 20px;
+            display: none;
+            transition: all ease-in-out .2s;
+        }
+        .demo0 p{
+            position: absolute;
+            top: 0px;
+            left: 70px;
+            /* display: none; */
+            color: white !important;
+        }
+        .demo1 {
+            position: absolute;
+            top: 300px;
+            left: 20px;
+            display: none;
+            transition: all ease-in-out .2s;
+        }
+        .demo1 p{
+            position: absolute;
+            top: 0px;
+            left: 70px;
+            /* display: none; */
+            color: white !important;
+        }
+        .demo2 {
+           position: absolute;
+            top: 400px;
+            left: 20px;
+            display: none;
+            transition: all ease-in-out .2s;
+        }
+        .demo2 p{
+            position: absolute;
+            top: 0px;
+            left: 70px;
+            /* display: none; */
+            color: white !important;
+        }
+        .demo3 {
+           position: absolute;
+            top: 500px;
+            left: 20px;
+            display: none;
+            transition: all ease-in-out .2s;
+        }
+        .demo3 p{
+            position: absolute;
+            top: 0px;
+            left: 70px;
+            /* display: none; */
+            color: white !important;
+        }
+        .demo4 {
+           position: absolute;
+            top: 600px;
+            left: 20px;
+            display: none;
+            transition: all ease-in-out .2s;
+        }
+        .demo4 p{
+            position: absolute;
+            top: 0px;
+            left: 70px;
+            /* display: none; */
+            color: white !important;
+        }
+        .demo5 {
+           position: absolute;
+            top: 700px;
+            left: 20px;
+            display: none;
+            transition: all ease-in-out .2s;
+        }
+        .demo5 p{
+            position: absolute;
+            top: 0px;
+            left: 70px;
+            /* display: none; */
+            color: white !important;
+        }
+        .demo6 {
+           position: absolute;
+            top: 50px;
+            left: 20px;
+           
+        }
+        .demo6 i{
+            background-color: none !important;
+            color: black;
+            font-size: 1rem;
+            border-radius: 50%;
+            background-color: lightgray;
+            padding: 10px;
+            
+        }
+        .demo7 i{
+            background-color: none !important;
+            color: black;
+            font-size: 1rem;
+            background-color:lightgray;
+            padding: 10px;
+            border-radius: 50%;
+        }
+        .demo7{
+            position: absolute;
+            top: 50px;
+            left: 290px;
+            transition: all ease-in-out .2s;
+        }
+        p{
+            font-family: sans-serif;
+        }
+        nav{
+            height: 100px;
+            width: 100%;
+            z-index: -1;
+            background-color: black;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        nav h1{
+                color: white;
+                text-align: center;
+                position: absolute;
+                left: 40%;
+                top: 5%;
+        }
+    </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.css" integrity="sha512-dUOcWaHA4sUKJgO7lxAQ0ugZiWjiDraYNeNJeRKGOIpEq4vroj1DpKcS3jP0K4Js4v6bXk31AAxAxaYt3Oi9xw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <nav>   
+        <h1>Amazon</h1>
+    </nav>
+    <div class="sidebar">
+    <div class="demo6 ">
+        <i class="ri-menu-2-line" id="Open"></i>
+    </div>
+    <div class="demo0 demo">
+        <i class="ri-home-4-line"></i>
+        <p>Home</p>
+    </div>
+    <div class="demo1 demo">
+        <i class="ri-mail-line"></i>
+        <p>Mail</p>
+    </div>
+    <div class="demo2 demo">
+        <i class="ri-map-pin-user-fill"></i>
+        <p>Location</p>
+    </div>
+    <div class="demo3 demo">
+        <i class="ri-user-add-line"></i>
+        <p>Users</p>
+    </div>
+    <div class="demo4 demo">
+        <i class="ri-phone-line"></i>
+        <p>Contact</p>
+    </div>
+    <div class="demo5 demo">
+        <i class="ri-login-box-fill"></i>
+        <p>Login</p>
+    </div>
+    <div class="demo7"> 
+        <i class="ri-close-line" id="Close"></i>
+    </div>
+    </div>
+    <script>
+        let touct =document.querySelector("#Open");
+        
+        touct.addEventListener('click',()=>{
+            document.getElementsByClassName("sidebar")[0].style.width = "350px";
+            document.getElementsByClassName("demo0")[0].style.display="block"
+            document.getElementsByClassName("demo1")[0].style.display="block"
+            document.getElementsByClassName("demo2")[0].style.display="block"
+            document.getElementsByClassName("demo3")[0].style.display="block"
+            document.getElementsByClassName("demo4")[0].style.display="block"
+            document.getElementsByClassName("demo5")[0].style.display="block"
+            document.getElementsByClassName("sidebar")[0].style.backgroundColor="black"
+            // document.getElementsByClassName("sidebar")[0].style.zIndex="20"
+        })
+
+        let toucted =document.querySelector("#Close");
+       
+        toucted.addEventListener('click',()=>{
+            document.getElementsByClassName("sidebar")[0].style.width = "100px";
+             document.getElementsByClassName("demo0")[0].style.display="none"
+            document.getElementsByClassName("demo1")[0].style.display="none"
+            document.getElementsByClassName("demo2")[0].style.display="none"
+            document.getElementsByClassName("demo3")[0].style.display="none"
+            document.getElementsByClassName("demo4")[0].style.display="none"
+            document.getElementsByClassName("demo5")[0].style.display="none"
+            document.getElementsByClassName("sidebar")[0].style.backgroundColor="transparent"
+            // document.getElementsByClassName("sidebar")[0].style.zIndex="-10"
+            // document.getElementById("Open").style.display="block"
+        })
+    </script>
+</html>

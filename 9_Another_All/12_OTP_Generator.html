@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <input type="text" name="password" id="pwd" >
+    <button onclick="verify()">verify</button>
+</body>
+
+<script>
+    // otp generator
+    // var length=4; //length of variable
+    function generateotp(length) {
+        var otp = ''; //this otp variable is empty
+        for (let i = 0; i < length; i++) {
+
+            otp += Math.floor(Math.random() * 10).toString();
+
+        }
+        return otp;
+        console.log(typeof otp)
+    }
+    // console.log(generateotp(6))
+    const cpwd = parseInt(generateotp(6));
+    console.log(cpwd);
+
+    
+    function verify() {
+        var pwd = document.getElementById("pwd").value;
+        pwd = parseInt(pwd)
+        console.log(pwd);
+        if (pwd === cpwd) {
+            console.log("OTP SYSTEM SUCCESSFULLY WORK !!")
+        }
+        else {
+            console.log("OTP NOT MATCH!!")
+        }
+    }
+</script>
+
+</html>

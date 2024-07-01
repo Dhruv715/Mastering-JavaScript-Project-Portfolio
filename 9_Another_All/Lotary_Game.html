@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lotary Game Using Js</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .box{
+                width: 50vh;
+                margin: 20px auto 10px;
+                color: white;
+                border: 2px solid rgb(0, 0, 0);
+                text-align: center;
+                padding: 10px 0px;
+        }
+        .box input{
+            width: 100%;
+        }
+        caption{
+            text-align: center;
+            color: purple;
+            font-family: cursive;
+            font-size: .5rem;
+            font-weight: 400;
+            text-align: center;
+        }
+        table {
+            background-color: black;
+            /* padding: 10px; */
+            border-collapse: collapse;
+            color: white;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: .4rem;
+            font-weight: 300;
+            margin:  10px auto;
+        }
+        table tr,td,th{
+            border: 1px solid purple;
+            padding: 5px ;
+        }
+        #secondBtn button{
+            padding: 5px 10px;
+            background-color: black;
+            color: white;
+            font-size: .5rem;
+            margin: 10px auto;
+        }
+        #secondBtn{
+            display: none;
+
+        }
+        h2{
+            text-align: center;
+            padding: 10px auto;
+        }
+    </style>
+</head>
+<body>
+  <div class="box">
+    <input type="number" id="code">
+    <button onclick="LotaryDist()">Create Lotary Ticket</button>
+  </div>
+    <table>
+        <caption>Lotary Participants List</caption>
+        <thead>
+            <tr>
+                <th>Lotary Id.</th>
+                <th>User Id.</th>
+                <th>Lotary No.</th>
+                
+            </tr>
+        </thead>
+        <tbody id="semi">
+           
+        </tbody>
+    </table>
+
+   
+    <div id="secondBtn">
+        <button  onclick="Result()">Declare Result</button>
+    <h2>Winner List</h2>
+    <table>
+        <caption>Lotary Winner List</caption>
+        <thead>
+            <tr>
+                <th>Lotary Id.</th>
+                <th>User Id.</th>
+                <th>Lotary No.</th>
+                
+            </tr>
+        </thead>
+        <tbody id="demo">
+           
+        </tbody>
+    </table>
+    </div>
+</body>
+<script>
+    let number =''
+    arr=[];
+    let i=0;
+    function  LotaryDist(){
+        
+        let data = document.getElementById("code").value;
+        
+            number=""
+           for(let i=0;i<6;i++){
+             number += Math.floor(Math.random()*9+1);
+            }
+            ids= i+1;
+            i++;
+            
+            obj = {LotaryId:ids,UserNum:data , LotaryNum :number};
+            console.log(obj);
+
+            arr.push(obj);
+            
+        Print();
+    }
+    function Print(){
+        if(arr.length ==9){
+             document.getElementById("secondBtn").style.display="block";
+        }
+        document.getElementById("semi").innerHTML=""
+            for(let i=0;i<arr.length;i++){
+                document.getElementById("semi").innerHTML += ` <tr>
+                <td>${arr[i].LotaryId}</td>
+                <td>${arr[i].UserNum}</td>
+                <td>${arr[i].LotaryNum}</td>
+                
+            </tr>` 
+            }
+    }
+    let dataSet=[];
+    let ResultData =[];
+    function Result(){
+        dataSet=[];
+        for (let i = 0; i < arr.length; i++) {
+            dataSet.push(arr[i].UserNum);
+            // console.log(dataSet)
+        }
+        maindata =dataSet[Math.floor(Math.random() * dataSet.length)];
+        for (let i = 0; i < arr.length; i++) {
+            if(arr[i].UserNum == maindata){
+                ResultData.push(arr[i]);
+            }
+        }
+        console.log(ResultData);
+        DisplayData(ResultData);
+    }
+    function DisplayData(ResultData){
+        for(i=0;i<ResultData.length;i++){
+               document.getElementById("demo").innerHTML +=` <tr>
+                <td>${ResultData[i].LotaryId}</td>
+                <td>${ResultData[i].UserNum}</td>
+                <td>${ResultData[i].LotaryNum}</td>
+            </tr>` 
+          }
+       
+    }
+</script>
+</html>

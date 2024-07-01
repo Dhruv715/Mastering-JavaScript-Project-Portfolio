@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1 Form Validation With Localstorage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+</head>
+<body class="container-fluid">
+    <form action="" class="col-sm-6 col-md-4 col-lg-4  mx-auto my-5 text-center p-5 bg-dark" onsubmit="RunValidation(); return false"> 
+        <h1 class="text-light">Registration Form</h1>
+        <br>
+        <input type="text" class="py-2 px-2 w-100" placeholder="Enter Name Here..." id="Fname">
+        <p id="NameError" class="text-danger text-start"></p>
+        <input type="tel" class="py-2 px-2 w-100" placeholder="Enter Phone Here.." id="Contact">
+        <br>
+        <p id="NumberError" class="text-danger text-start"></p>
+        <input type="email" class="py-2 px-2 w-100" placeholder="Enteer Email Here.." id="Email">
+        <br>
+        <p id="EmailError" class="text-danger text-start"></p>
+        <input type="password" class="py-2 px-2 w-100" placeholder="Enter Password Here.." id="Pwd">
+        <br>
+        <p id="PwdError" class="text-danger text-start"></p>
+        <input type="submit" class="btn btn-primary" value="Submit">
+    </form>
+    
+</body>
+<script>
+    var arr=[];
+    function RunValidation(){
+        var FnameVal = document.getElementById("Fname").value;
+        var ContactVal =document.getElementById("Contact").value;
+        var EmailVal = document.getElementById("Email").value;
+        var PwdVal = document.getElementById("Pwd").value;
+        // console.log(FnameVal)
+        // console.log(ContactVal);
+        // console.log(EmailVal);
+        // console.log(PwdVal);
+        // Set All Error Are Null
+        document.getElementById("NameError").innerHTML= ""
+        document.getElementById("NumberError").innerHTML = ""
+        document.getElementById("EmailError").innerHTML = ""
+        document.getElementById("PwdError").innerHTML = ""
+        
+        var FnameRejex = /^[a-zA-Z]{3,20}$/;
+        var MobileRejex =  /^[6-9]+\d{9}$/;
+        var EmailRejex = /^[a-zA-Z0-9._-]+@[a-zA-Z]+\.[a-zA-Z]{2,4}$/;
+        var PwdRejex = /^\d{8}$/;
+       
+        if(FnameVal.match(FnameRejex)==null){
+            document.getElementById("NameError").innerHTML = "*Invalid Name";
+        }
+        else if(ContactVal.match(MobileRejex)==null){
+            document.getElementById("NumberError").innerHTML="Invalid Contact Number";
+        }
+        else if(EmailVal.match(EmailRejex)==null){
+            document.getElementById("EmailError").innerHTML = "Invalid Email"
+        }
+        else if(PwdVal.match(PwdRejex)==null){
+            document.getElementById("PwdError").innerHTML = "Password Can 8 Digit Required"
+        }
+        else{
+            var obj = {name :FnameVal ,phone:ContactVal ,email : EmailVal ,pwd :PwdVal };
+            arr.push(obj);
+            localStorage.setItem("DataBase",JSON.stringify(arr))
+            console.log(arr);
+            document.getElementById("Fname").value ="";
+            document.getElementById("Contact").value ="";
+            document.getElementById("Email").value="";
+            document.getElementById("Pwd").value="";
+            // location.reload();
+        }
+        
+    }
+
+ 
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</html>

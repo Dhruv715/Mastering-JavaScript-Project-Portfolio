@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2 LocalStorage Data of Register User</title>
+    <style>
+        *{
+            padding: 0; 
+            margin: 0;
+            box-sizing: border-box;
+        }
+        table{
+            width: 30%;
+            background-color: black;
+            margin: 20px auto;
+            color: white;
+            border-collapse: collapse;
+        }
+        table tr,th,td{
+            color: white;
+            border: 2px solid white;
+            padding: 10px;
+        }
+        h1{
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Register User Data</h1>
+    <table>
+        
+        <thead> 
+            <tr>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Password</th>
+            </tr>
+        </thead>
+        <tbody id="semi">
+
+        </tbody>
+    </table>
+</body>
+<script>
+   var Data = JSON.parse(localStorage.getItem("DataBase"))
+    for (let i = 0; i < Data.length; i++) {
+            document.getElementById("semi").innerHTML +=` <tr>
+                <td>${Data[i].name}</td>
+                <td>${Data[i].phone}</td>
+                <td>${Data[i].email}</td>
+                <td>${Data[i].pwd}</td>
+            </tr>  `
+        
+    }
+</script>
+</html>

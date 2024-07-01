@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Toc game 2 Using Html and Css And Javascript</title>
+    
+    <style>
+        *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+.container{
+    margin: 10px auto;
+    width: 30vw;
+    height: 30vw;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+ input{
+    width: 33.3%;
+    height: 33.3%;
+    text-align: center;
+    background-color: rgba(239, 126, 239, 0.525);
+    color: white;
+    font-size: 2rem;
+    border: 1px solid;
+    outline: none;
+    /* border-radius: 10px; */
+   
+}
+button{
+    padding: 10px 20px;
+    border: 2px solid purple;
+    border-radius: 20px;
+    background-color: transparent;
+    color: purple;
+    font-size: 1.2rem;
+    
+}
+h1{
+    font-family: cursive;
+    color: rgba(135, 7, 135, 0.819);
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+#message{
+    font-family: cursive;
+    color: purple;
+    font-size: 1.3rem;
+    margin: 10px 0px;
+}
+    </style>
+</head>
+
+<body>
+    <h1 >Tic Toc Game</h1>
+    <div class="container">
+            <input type="text" id="1" onclick="Games(this.id)" value="">
+            <input type="text" id="2" onclick="Games(this.id)" value="">
+            <input type="text" id="3" onclick="Games(this.id)" value="">
+        
+            <input type="text" id="4" onclick="Games(this.id)" value="">
+            <input type="text" id="5" onclick="Games(this.id)" value="">
+            <input type="text" id="6" onclick="Games(this.id)" value="">
+       
+            <input type="text" id="7" onclick="Games(this.id)" value="">
+            <input type="text" id="8" onclick="Games(this.id)" value="">
+            <input type="text" id="9" onclick="Games(this.id)" value="">
+        
+    </div>
+    <p id="message"></p>
+    <button onclick="Reset()"> Reset</button>
+</body>
+<script>
+    function Reset(){
+        location.reload();
+    }
+   let cnt= 0;
+    let i=1;
+   
+        function Games(val){
+           
+            if(document.getElementById("message").innerHTML == ""){
+            if(i==1){
+                document.getElementById(val).value ="X";
+                document.getElementById(val).disabled = true;
+                i=0;
+                setTimeout(()=>{
+                    computerAuto();
+                },1000);
+
+            }
+            cnt++;
+            Result(val);
+        }
+    }
+    function computerAuto(){
+        var pos = Math.floor(Math.random() * 9)+1;
+        while(document.getElementById(pos).value !== ""){
+            pos = Math.floor(Math.random() *9)+1;
+        }
+        if(document.getElementById("message").innerHTML == ""){
+        document.getElementById(pos).value = "O";
+        document.getElementById(pos).disabled =true;
+        }
+        cnt++;
+        i = 1;
+        Result(pos);
+    }
+    function Result(val){
+        // console.log(val)
+        var b1,b2,b3,b4,b5,b6,b7,b8,b9;
+        b1 =document.getElementById("1").value;
+        b2 =document.getElementById("2").value;
+        b3 =document.getElementById("3").value;
+        b4 =document.getElementById("4").value;
+        b5 =document.getElementById("5").value;
+        b6 =document.getElementById("6").value;
+        b7 =document.getElementById("7").value;
+        b8 =document.getElementById("8").value;
+        b9 =document.getElementById("9").value;
+        condition1 = b1 ==='X' && b2 =='X' && b3=='X' ||
+        b4 ==='X' && b5 =='X' && b6=='X' ||
+        b7 ==='X' && b8 =='X' && b9=='X' ||
+        b1 ==='X' && b4 =='X' && b7=='X' ||
+        b2 ==='X' && b5 =='X' && b8=='X' ||
+        b3 ==='X' && b6 =='X' && b9=='X' ||
+        b3 ==='X' && b5 =='X' && b7 =='X' ||
+        b1 =='X'  && b5 =='X'  && b9 =='X'
+        condition2 = b1 ==='O' && b2 =='O' && b3=='O' ||
+        b4 ==='O' && b5 =='O' && b6=='O' ||
+        b7 ==='O' && b8 =='O' && b9=='O' ||
+        b1 ==='O' && b4 =='O' && b7=='O' ||
+        b2 ==='O' && b5 =='O' && b8=='O' ||
+        b3 ==='O' && b6 =='O' && b9=='O' ||
+        b3 ==='O' && b5 =='O' && b7 =='O' ||
+        b1 =='O'  && b5 =='O'  && b9 =='O'
+        if(condition1)
+        {
+            document.getElementById("message").innerHTML = "Congratilations🎉 X is Win";
+            endGame();
+        }
+        else if(condition2){
+            document.getElementById("message").innerHTML =  "Congratilations🎉 O is Win";
+            endGame();
+        }
+        else if (cnt === 9)
+            {
+                document.getElementById("message").innerHTML =  "game is over";
+                endGame();
+            }
+       
+
+    }
+    function endGame(){
+        for (let i = 1; i <=9; i++) {
+            document.getElementById(i.toString()).disabled = true;
+            
+        }
+    }
+</script>
+
+</html>

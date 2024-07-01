@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            text-align: center;
+            font-family: cursive;
+            
+        }
+        .row{
+            display: flex;
+            justify-content: center;
+
+        }
+        .row button {
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Color Changer Task</h1>
+    <div class="row">
+        <button onclick="Blue()">Blue</button>
+        <button onclick="Black()">Black</button>
+        <button onclick="green()">Green</button>
+        <button onclick="red()">Red</button>
+        <button>white</button>
+        <button>pink</button>
+    </div>
+</body>
+<script>
+    const Blue =()=>{
+        document.body.style.backgroundColor ="lightblue"
+    }
+    const Black =()=>{
+        document.body.style.backgroundColor ="black"
+        document.body.style.color ="white"
+    }
+    const green =()=>{
+        document.body.style.backgroundColor ="green"
+        document.body.style.color ="white"
+    }
+    const red =()=>{
+        document.body.style.backgroundColor ="salmon"
+        document.body.style.color ="white"
+    }
+</script>
+</html>

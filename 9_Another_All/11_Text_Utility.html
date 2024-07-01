@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copy To Clipboard 1</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        #textcontent{
+            width: 80%;
+            display: block;
+            margin: 10px auto;
+            border: 2px solid black;
+            outline: none;
+            border-radius: 10px;
+            padding: 20px;
+            font-family: cursive;
+        }
+        textarea::placeholder{
+            font-family: cursive;
+            color: black;
+        }
+        .boxbutton{
+            height: 50px;
+            display: flex;
+            background-color: lightgray;
+            justify-content: center;
+            align-items: center;
+        }
+        #textresult{
+            width: 80%;
+            display: block;
+            margin: 10px auto;
+            border: 2px solid black;
+            outline: none;
+            border-radius: 10px;
+            padding: 20px;
+            font-family: cursive;
+        }
+        button{
+            padding: 10px 20px;
+            border: 2px solid black;
+            background-color: transparent;
+            border-radius: 5px;
+            transition: all ease-in-out .3s;
+            margin: 0px 10px;
+        }
+        button:hover{
+            background-color: black;
+            color: white;
+            /* text-transform: uppercase; */
+            
+        }
+    </style>
+</head>
+<body>
+  <div>
+    <textarea name="message" id="textcontent" placeholder="Enter Text Here..." cols="30" rows="10"></textarea>
+
+  </div>
+   <div class="boxbutton">
+    <button onclick="copys()">Copy Text</button>
+    <button onclick="Upper()">Convert Uppercase</button>
+    <button onclick="Lowwer()">Convert LowerCase</button>
+    <button onclick="rspace()">Remove Space</button>
+    <button onclick="ClearBro()">Clear All </button>
+   </div>
+   <h1 style="margin-left: 130px;">Preview</h1>
+    <textarea name="" id="textresult" cols="30" rows="10"></textarea>
+</body>
+<script>
+    var texty =document.getElementById("textcontent");
+
+    var secondbox = document.getElementById("textresult");
+        // copy text function
+        function copys(){
+            navigator.clipboard.writeText(texty.value)
+            alert("TEXT COPY SUCCESSFULLY")
+            allaround()
+        }
+        // convert into uppercase
+     function  Upper(){
+        texty.value =texty.value.toUpperCase();
+        
+        allaround()
+     }
+    //  clear all text
+     function ClearBro(){
+        texty.value =""
+        allaround()
+     }
+    //  convert into lowercase
+     function Lowwer(){
+        texty.value =texty.value.toLowerCase()
+        allaround()
+     }
+    //  display preview box inside current changed data
+     function allaround(){
+        secondbox.value = texty.value;
+     }
+     allaround()
+
+     function rspace(){
+         texty.value = texty.value.replace(/^[ ]+/g, "")
+         allaround()
+     }
+</script>
+
+</html>
